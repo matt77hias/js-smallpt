@@ -1,6 +1,6 @@
 const GAMMA = 2.2;
 
-write_ppm = function (w, h, Ls) {
+function write_ppm(w, h, Ls) {
     data = "P3\n" + w + " " + h + "\n255\n"
     for (var y = 0; y < h; ++y) {
         for (var x = 0; x < w; ++x) {
@@ -11,7 +11,7 @@ write_ppm = function (w, h, Ls) {
     download_file(data, "js-smallpt.ppm", "text/plain");
 }
 
-download_file = function (data, fname, type) {
+function download_file(data, fname, type) {
     var file = new Blob([data], { type: type });
     if (window.navigator.msSaveOrOpenBlob) {
         // IE10+
@@ -32,7 +32,7 @@ download_file = function (data, fname, type) {
     }
 }
 
-display = function (w, h, Ls) {
+function display(w, h, Ls) {
     var canvas = document.getElementById("smallpt-canvas");
     var context = canvas.getContext("2d");
 

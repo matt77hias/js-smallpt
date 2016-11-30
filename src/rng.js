@@ -1,7 +1,3 @@
-seed = function (s) {
-    Math.seedrandom(s);
-}
-
-uniform_float = function () {
+function uniform_float() {
     return Math.random();
 }
