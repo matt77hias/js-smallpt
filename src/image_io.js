@@ -1,7 +1,35 @@
 const GAMMA = 2.2;
 
 write_ppm = function (w, h, Ls) {
+    data = "P3\n" + w + " " + h + "\n255\n"
+    for (var y = 0; y < h; ++y) {
+        for (var x = 0; x < w; ++x) {
+            var L = Ls[y * w + x];
+            data += to_byte(L.x, GAMMA) + " " + to_byte(L.y, GAMMA) + " " + to_byte(L.z, GAMMA) + " ";
+        }
+    }
+    download_file(data, "js-smallpt.ppm", "text/plain");
+}
 
+download_file = function (data, fname, type) {
+    var file = new Blob([data], { type: type });
+    if (window.navigator.msSaveOrOpenBlob) {
+        // IE10+
+        window.navigator.msSaveOrOpenBlob(file, fname);
+    }
+    else {
+        // Others
+        var url = URL.createObjectURL(file);
+        var a = document.createElement("a");
+        a.href = url;
+        a.download = fname;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function () {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }, 0);
+    }
 }
 
 display = function (w, h, Ls) {
