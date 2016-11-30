@@ -84,7 +84,7 @@ radiance = function (ray) {
 
 // Main
 main = function () {
-    var t0 = performance.now();
+	var t0 = performance.now();
 
 	var nb_samples = 64 / 4;
 	var w = 1024;
