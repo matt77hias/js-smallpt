@@ -16,23 +16,23 @@ Sphere.prototype = {
 	constructor : Sphere,
 	
 	intersect: function (ray) {
-		var op = Vector3.sub(this.p, ray.o);
-		var dop = Vector3.dot(ray.d, op);
-		var D = dop * dop - Vector3.dot(op, op) + this.r * this.r;
+		let op = Vector3.sub(this.p, ray.o);
+		let dop = Vector3.dot(ray.d, op);
+		let D = dop * dop - Vector3.dot(op, op) + this.r * this.r;
 
 		if (D < 0) {
 			return false;
 		}
 
-		var sqrtD = Math.sqrt(D);
+		let sqrtD = Math.sqrt(D);
 
-		var tmin = dop - sqrtD;
+		let tmin = dop - sqrtD;
 		if (ray.tmin < tmin && tmin < ray.tmax) {
 			ray.tmax = tmin;
 			return true;
 		}
 
-		var tmax = dop + sqrtD;
+		let tmax = dop + sqrtD;
 		if (ray.tmin < tmax && tmax < ray.tmax) {
 			ray.tmax = tmax;
 			return true;

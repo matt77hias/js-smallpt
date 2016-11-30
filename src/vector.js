@@ -57,7 +57,7 @@ Vector3.prototype = {
 		return Math.sqrt(this.norm2_squared());
 	},
 	normalize: function () {
-		var a = 1.0 / this.norm2();
+		let a = 1.0 / this.norm2();
 		this.x *= a;
 		this.y *= a;
 		this.z *= a;
@@ -118,7 +118,7 @@ Vector3.sqrt = function (v) {
 	return Vector3.apply_unary(Math.sqrt, v);
 }
 Vector3.pow = function (v, e) {
-	var fixed_pow = function (a) { return Math.pow(a, e); };
+	let fixed_pow = function (a) { return Math.pow(a, e); };
 	return Vector3.apply_unary(fixed_pow, v);
 }
 Vector3.abs = function (v) {
@@ -143,7 +143,7 @@ Vector3.trunc = function (v) {
 	return Vector3.apply_unary(Math.trunc, v);
 }
 Vector3.clamp = function (v, low, high) {
-	var fixed_clamp = function (a) { return clamp(a, low, high); };
+	let fixed_clamp = function (a) { return clamp(a, low, high); };
 	return Vector3.apply_unary(fixed_clamp, v);
 }
 Vector3.lerp = function (a, v1, v2) {
