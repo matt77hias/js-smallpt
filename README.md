@@ -1,7 +1,7 @@
-# js-smallpt
+# [js-smallpt](https://matt77hias.github.io/js-smallpt/)
 
 ## About
-JavaScript modification of Kevin Baeson's [99 line C++ path tracer](http://www.kevinbeason.com/smallpt/)
+[JavaScript modification](https://matt77hias.github.io/js-smallpt/) of Kevin Baeson's [99 line C++ path tracer](http://www.kevinbeason.com/smallpt/)
 
 **Note**: I deliberately chose for the same software design for [all programming languages](https://github.com/matt77hias/smallpt) out of clarity and performance reasons (this can conflict with the nature of declarative/functional programming languages).
 
