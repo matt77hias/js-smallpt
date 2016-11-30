@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel = "stylesheet" type = "text/css" href = "css/smallpt.css"></link>
+    </head>
+    <body>
+        <header>js-smallpt</header>
+        <div id = "content">
+            <article><a href="https://github.com/matt77hias/js-smallpt">JavaScript</a> modification of Kevin Baeson's <a href="http://www.kevinbeason.com/smallpt/">99 line C++ path tracer</a>.</article>
+            <canvas id = "smallpt-canvas" width = "1024" height = "768">
+                Your browser does not support the canvas element.
+            </canvas>
+            <button onclick="main();">
+                Render
+            </button>
+        </div>
+        
+        <script src = "src/math_tools.js"></script>
+        <script src = "src/vector.js"></script>
+        <script src = "src/rng.js"></script>
+        <script src = "src/sampling.js"></script>
+		<script src = "src/ray.js"></script>
+		<script src = "src/sphere.js"></script>
+		<script src = "src/specular.js"></script>
+		<script src = "src/image_io.js"></script>
+        <script src = "src/js-smallpt.js"></script>
+    </body>
+</html>
+

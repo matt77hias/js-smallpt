@@ -1,0 +1,52 @@
+@font-face 
+{
+    font-family: 		header;
+    src: 				url("fonts/Raleway-ExtraLight.ttf");
+}
+
+body 
+{
+    margin: 			0;
+    font-family: 		header;
+}
+
+header 
+{
+    width: 				100%;
+    padding: 			0.4rem;
+    
+    font-size: 			3rem;
+    font-weight: 		bold;
+    font-family: 		header;
+    text-align: 		center;
+    
+    color: 				white;
+    background-color: 	green;
+}
+
+#content 
+{
+    max-width: 			64em;
+    margin: 			auto;
+    text-align: 		center;
+}
+
+article 
+{
+    text-align: 		center;
+    margin: 			1rem;
+}
+
+#smallpt-canvas 
+{
+    border: 			1px solid black;
+    margin-left: 		auto;
+    margin-right: 		auto;
+}
+
+button 
+{
+    width: 				640px;
+    padding: 			0.5rem;
+    margin: 			0.5rem;
+}
