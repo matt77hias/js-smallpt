@@ -23,7 +23,7 @@ function intersect_scene(ray) {
 			id = i;
 		}
 	}
-	return [hit, id]
+	return [hit, id];
 }
 
 // Radiance
