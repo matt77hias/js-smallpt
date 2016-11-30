@@ -1,10 +1,17 @@
 const GAMMA = 2.2;
 
 function write_ppm(w, h, Ls) {
+<<<<<<< HEAD
     data = "P3\n" + w + " " + h + "\n255\n"
     for (let y = 0; y < h; ++y) {
         for (let x = 0; x < w; ++x) {
             let L = Ls[y * w + x];
+=======
+    data = "P3\n" + w + " " + h + "\n255\n";
+    for (var y = 0; y < h; ++y) {
+        for (var x = 0; x < w; ++x) {
+            var L = Ls[y * w + x];
+>>>>>>> 6982e5f17180a29f89252c6228df81d5c99dc504
             data += to_byte(L.x, GAMMA) + " " + to_byte(L.y, GAMMA) + " " + to_byte(L.z, GAMMA) + " ";
         }
     }
