@@ -14,7 +14,7 @@ const spheres = [
 		new Sphere(600,  new Vector3(50, 681.6 - .27, 81.6), new Vector3(12.0, 12.0, 12.0), new Vector3(0.0, 0.0, 0.0),    DIFFUSE)	  //Light
 	];
 
-intersect_scene = function (ray) {
+function intersect_scene(ray) {
 	var id = 0
 	var hit = false
 	for (var i = 0; i < spheres.length; ++i) {
@@ -27,7 +27,7 @@ intersect_scene = function (ray) {
 }
 
 // Radiance
-radiance = function (ray) {
+function radiance(ray) {
 	var r = ray;
 	var L = new Vector3(0.0, 0.0, 0.0);
 	var F = new Vector3(1.0, 1.0, 1.0);
@@ -83,7 +83,7 @@ radiance = function (ray) {
 }
 
 // Main
-main = function () {
+function main() {
 	var t0 = performance.now();
 
 	var nb_samples = 64 / 4;

@@ -1,18 +1,18 @@
-reflectance0 = function (n1, n2) {
+function reflectance0(n1, n2) {
     var sqrt_R0 = (n1 - n2) / (n1 + n2);
     return sqrt_R0 * sqrt_R0;
 }
 
-schlick_reflectance = function (n1, n2, c) {
+function schlick_reflectance(n1, n2, c) {
     var R0 = reflectance0(n1, n2);
     return R0 + (1 - R0) * c * c * c * c * c;
 }
 
-ideal_specular_reflect = function (d, n) {
+function ideal_specular_reflect(d, n) {
     return Vector3.sub(d, Vector3.mul(2.0 * Vector3.dot(n, d), n));
 }
 
-ideal_specular_transmit = function (d, n, n_out, n_in) {
+function ideal_specular_transmit(d, n, n_out, n_in) {
     var d_Re = ideal_specular_reflect(d, n);
 
     var out_to_in = Vector3.dot(n, d) < 0;
