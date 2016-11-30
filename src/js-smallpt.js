@@ -23,7 +23,7 @@ function intersect_scene(ray) {
 			id = i;
 		}
 	}
-	return [hit, id]
+	return [hit, id];
 }
 
 // Radiance
@@ -92,7 +92,6 @@ function main() {
 
 	var eye = new Vector3(50, 52, 295.6);
 	var gaze = new Vector3(0, -0.042612, -1).normalize();
-	
 	var fov = 0.5135;
 	var cx = new Vector3(w * fov / h, 0.0, 0.0);
 	var cy = Vector3.mul(Vector3.cross(cx, gaze).normalize(), fov);

@@ -1,7 +1,7 @@
 const GAMMA = 2.2;
 
 function write_ppm(w, h, Ls) {
-    data = "P3\n" + w + " " + h + "\n255\n"
+    data = "P3\n" + w + " " + h + "\n255\n";
     for (var y = 0; y < h; ++y) {
         for (var x = 0; x < w; ++x) {
             var L = Ls[y * w + x];
