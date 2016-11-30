@@ -59,15 +59,15 @@ function radiance(ray) {
 		// Next path segment
 		switch (shape.reflection_t) {
 			case SPECULAR:
-				let d = ideal_specular_reflect(r.d, n);
-				r = new Ray(p, d, EPSILON_SPHERE, Infinity, r.depth + 1);
+				let dRe = ideal_specular_reflect(r.d, n);
+				r = new Ray(p, dRe, EPSILON_SPHERE, Infinity, r.depth + 1);
 				continue;
 			case REFRACTIVE:
 				let refraction_record = ideal_specular_transmit(r.d, n, REFRACTIVE_INDEX_OUT, REFRACTIVE_INDEX_IN);
-				let d  = refraction_record[0];
+				let dTr  = refraction_record[0];
 				let pr = refraction_record[1];
 				F = Vector3.mul(F, pr);
-				r = new Ray(p, d, EPSILON_SPHERE, Infinity, r.depth + 1);
+				r = new Ray(p, dTr, EPSILON_SPHERE, Infinity, r.depth + 1);
 				continue
 			default:
 				let w = (Vector3.dot(n, r.d) < 0) ? n : Vector3.minus(n);
