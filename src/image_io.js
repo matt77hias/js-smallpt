@@ -8,7 +8,7 @@ function write_ppm(w, h, Ls) {
             data += to_byte(L.x, GAMMA) + " " + to_byte(L.y, GAMMA) + " " + to_byte(L.z, GAMMA) + " ";
         }
     }
-    download_file(data, "js-smallpt.ppm", "text/plain");
+    download_file(data, "js-image.ppm", "text/plain");
 }
 
 function download_file(data, fname, type) {
